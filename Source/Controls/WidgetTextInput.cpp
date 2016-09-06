@@ -380,7 +380,7 @@ void WidgetTextInput::ProcessEvent(Core::Event& event)
 			event.GetParameter< int >("meta_key", 0) == 0)
 		{
 			Rocket::Core::word character = event.GetParameter< Rocket::Core::word >("data", 0);
-			if (max_length < 0 || (int) Core::String(GetElement()->GetAttribute< Rocket::Core::String >("value", "")).Length() < max_length)
+			if (max_length < 0 || (int) Core::String(GetElement()->GetAttribute< Rocket::Core::String >("value", "")).Length() - selection_length < max_length)
 				AddCharacter(character);
 		}
 
