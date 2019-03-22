@@ -77,7 +77,7 @@ void ElementTabSet::SetPanel(int tab_index, Core::Element* element)
 	Core::Element* windows = GetChildByTag("panels");
 	if (tab_index >= 0 &&
 		tab_index < windows->GetNumChildren())
-		windows->ReplaceChild(GetChild(tab_index), element);
+		windows->ReplaceChild(windows->GetChild(tab_index), element);
 	else
 		windows->AppendChild(element);
 }
